@@ -10,7 +10,7 @@ var setupBeatportButton = function()
 	var context = $('#flat-share-container');
 
 	// Get information on what we're searching
-	var title = context.data('title'),
+	var title = context.data('title').replace(/\[.*\]$/, '').trim(),
 		query = encodeURIComponent(title),
 	    type  = context.data('context').toLowerCase(),
 	    link  = SEVEN_DIGITAL_URLS[type] + query;
