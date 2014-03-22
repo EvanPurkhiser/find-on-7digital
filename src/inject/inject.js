@@ -1,13 +1,17 @@
-chrome.extension.sendMessage({}, function(response) {
-	var readyStateCheckInterval = setInterval(function() {
-	if (document.readyState === "complete") {
-		clearInterval(readyStateCheckInterval);
+var TRACK_SEARCH_URL = 'http://us.7digital.com/search/track?q='
 
-		// ----------------------------------------------------------
-		// This part of the script triggers when page is done loading
-		console.log("Hello. This message was sent from scripts/inject.js");
-		// ----------------------------------------------------------
+var details = $('.track-detail-view')
 
-	}
-	}, 10);
-});
+var title   = $('.primary-title h2', details).contents().first().text(),
+    mix     = $('.primary-title h2 span', details).text(),
+    artists = $('.artists .artists-value', details).first().text()
+
+// Build out the title from the title, mix, and artists
+query = artists + ' - ' + title
+
+if (mix !== null)
+{
+	query += ' (' + mix + ')'
+}
+
+console.log(query)
