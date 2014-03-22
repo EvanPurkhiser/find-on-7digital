@@ -1,17 +1,14 @@
 var TRACK_SEARCH_URL = 'http://us.7digital.com/search/track?q='
 
-var details = $('.track-detail-view')
+// The title of the track is in a meta element
+var track = $('meta[name=title]').attr('content'),
+    link  = TRACK_SEARCH_URL + encodeURIComponent(track)
 
-var title   = $('.primary-title h2', details).contents().first().text(),
-    mix     = $('.primary-title h2 span', details).text(),
-    artists = $('.artists .artists-value', details).first().text()
+// Setup the link button
+var linkElement = $('<a>')
+	.attr('href', link)
+	.attr('target', '_blank')
+	.addClass('ex7digital-small-button')
+	.text(track)
 
-// Build out the title from the title, mix, and artists
-query = artists + ' - ' + title
-
-if (mix !== null)
-{
-	query += ' (' + mix + ')'
-}
-
-console.log(query)
+$('#flat-share-container:parent').before(linkElement)
