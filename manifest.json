@@ -1,6 +1,6 @@
 {
   "name": "Find on 7digital",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "manifest_version": 2,
   "description": "Adds a button to popular digital MP3 download sites to search for the track on 7digital",
   "homepage_url": "https://github.com/EvanPurkhiser/find-on-7digital",
