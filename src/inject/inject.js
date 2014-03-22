@@ -16,7 +16,7 @@ var setupBeatportButton = function()
 	    link  = SEVEN_DIGITAL_URLS[type] + query;
 
 	// Handle unkown context types (Labels.. etc)
-	if ( ! (link in SEVEN_DIGITAL_URLS))
+	if ( ! (type in SEVEN_DIGITAL_URLS))
 	{
 		link = SEVEN_DIGITAL_URLS['other'] + query;
 	}
