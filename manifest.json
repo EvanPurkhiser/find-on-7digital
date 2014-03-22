@@ -16,7 +16,7 @@
     {
       "matches": ["http://beatport.com/*"],
       "css": ["src/inject/inject.css"],
-      "js": ["src/inject/inject.js"]
+      "js": ["vendor/jquery-2.1.0.js", "src/inject/inject.js"]
     }
   ]
 }
