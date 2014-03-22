@@ -14,7 +14,7 @@
   ],
   "content_scripts": [
     {
-      "matches": ["http://beatport.com/*"],
+      "matches": ["http://*.beatport.com/*"],
       "css": ["src/inject/inject.css"],
       "js": ["vendor/jquery-2.1.0.js", "src/inject/inject.js"]
     }
